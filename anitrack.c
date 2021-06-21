@@ -16,12 +16,17 @@ int main()
 	printf("\e[1;1H\e[2J");
 	printf("AniTrack\n");
 	enableRawMode();
+	bool raw = true;
 	for(;;)
 	{
 		switch(c = getchar())
 		{
 			case add_entry:
-				printf("now this is epic\n");
+				disableRawMode();
+				printf("name of anime: ");
+				scanf("%1024[0-9a-zA-Z ]", s);
+				printf("the name of the anime was %s", s);
+				enableRawMode();
 				break;
 		}
 	}
