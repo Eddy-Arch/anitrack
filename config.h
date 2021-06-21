@@ -9,7 +9,7 @@ char *seekbackint = "10";
 #define clearconsole 'c'
 #define add_entry 'a'
 #define nowplaying 't'
-#define list_title 'l'
+#define list_titles 'l'
 #define enable_raw 'r'
 #define enable_verbose 'v'
 #define help_msg 'h'

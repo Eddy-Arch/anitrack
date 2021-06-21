@@ -13,20 +13,28 @@ int main()
 {
 	char c;
 	char s[1024];
+	char t[1024];
 	printf("\e[1;1H\e[2J");
 	printf("AniTrack\n");
 	enableRawMode();
-	bool raw = true;
+	FILE *fptr;
 	for(;;)
 	{
 		switch(c = getchar())
 		{
 			case add_entry:
+			    	fptr = fopen("list.txt","w");
 				disableRawMode();
 				printf("name of anime: ");
 				scanf("%1024[0-9a-zA-Z ]", s);
 				printf("the name of the anime was %s", s);
+				fprintf(fptr, "%s", s);
+				fclose(fptr);
 				enableRawMode();
+				break;
+			case list_titles:
+				fscanf(fptr, "%s", &s);
+				printf("%s", t);
 				break;
 		}
 	}
