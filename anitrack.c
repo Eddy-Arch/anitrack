@@ -4,17 +4,27 @@
 #include <termios.h>
 #include <string.h>
 #include <unistd.h>
+#include "config.h"
 
 void enableRawMode();
 void disableRawMode();
 
 int main()
 {
-	enableRawMode();
 	char c;
 	char s[1024];
 	printf("\e[1;1H\e[2J");
 	printf("AniTrack\n");
+	enableRawMode();
+	for(;;)
+	{
+		switch(c = getchar())
+		{
+			case add_entry:
+				printf("now this is epic\n");
+				break;
+		}
+	}
 		
 }
 
